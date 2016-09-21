@@ -1,0 +1,17 @@
+Single sensor
+<table class="table table-striped" ng-hide="!!values">
+
+  <tr>
+    <th>Id</th>
+    <th>Sensor id</th>
+    <th>Value</th>
+    <th>Time stamp</th>
+  </tr>
+  <tr ng-repeat="value in values">
+    <td>{{value.id}}</td>
+    <td>{{value.sensor}}</td>
+    <td>{{value.value}}</td>
+    <td>{{value.timestamp}}</td>
+  </tr>
+
+</table>

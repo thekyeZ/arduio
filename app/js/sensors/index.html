@@ -1,0 +1,18 @@
+<table class="table table-striped">
+
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Active</th>
+    <th>Last Update</th>
+    <th>Type</th>
+  </tr>
+  <tr ng-repeat="sensor in sensors">
+    <td>{{sensor.id}}</td>
+    <td><a ui-sref="sensor({id: sensor.id})">{{sensor.name}}</a></td>
+    <td>{{sensor.active}}</td>
+    <td>{{sensor.last_update}}</td>
+    <td>{{sensor.type}}</td>
+  </tr>
+
+</table>
