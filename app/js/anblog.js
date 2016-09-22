@@ -5,14 +5,14 @@ var arduio = angular.module("arduio", ['backand', 'ui.router', 'ngResource'])
     BackandProvider.setSignUpToken('f1fad0c9-4302-427a-988d-68d2877b42ca');
     BackandProvider.setAnonymousToken('501575af-13ef-4636-beb1-9c4be3038736');
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/sensors');
 
     $stateProvider
-      .state('home',{
-        url: '/',
-        templateUrl: '/js/main/home.html',
-        controller: 'homePageController'
-      })
+      // .state('home',{
+      //   url: '/',
+      //   templateUrl: '/js/main/home.html',
+      //   controller: 'homePageController'
+      // })
       .state('sensors',{
         url: '/sensors',
         templateUrl: '/js/sensors/index.html',

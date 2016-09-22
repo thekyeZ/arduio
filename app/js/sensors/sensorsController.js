@@ -8,5 +8,12 @@ arduio.controller("sensorsController",  function($scope, dataService){
       console.log(sensors);
   });
 
+  $scope.deleteSensor = function(sensor){
+
+      console.log(sensor);
+
+
+  };
+
 
 });

@@ -6,6 +6,7 @@
     <th>Active</th>
     <th>Last Update</th>
     <th>Type</th>
+    <th>Actions</th>
   </tr>
   <tr ng-repeat="sensor in sensors">
     <td>{{sensor.id}}</td>
@@ -13,6 +14,7 @@
     <td>{{sensor.active}}</td>
     <td>{{sensor.last_update}}</td>
     <td>{{sensor.type}}</td>
+    <td><button ng-click="deleteSensor(sensor)">Delete</button></td>
   </tr>
 
 </table>
