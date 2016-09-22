@@ -23,6 +23,21 @@ var arduio = angular.module("arduio", ['backand', 'ui.router', 'ngResource'])
         templateUrl: '/js/sensors/sensor.html',
         controller: 'singleSensorController'
       })
+      .state('sensor_add',{
+        url: '/sensor_add',
+        templateUrl: '/js/sensors/add.html',
+        controller: 'addSensorController'
+      })
+      .state('values',{
+        url: '/values',
+        templateUrl: '/js/values/index.html',
+        controller: 'valuesController'
+      })
+      .state('value',{
+        url: '/value/:id',
+        templateUrl: '/js/sensors/velue.html',
+        controller: 'singleValueController'
+      })
 
 
   })

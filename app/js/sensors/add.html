@@ -1,0 +1,14 @@
+<form>
+  <div class="form-group">
+    <input type="text" ng-model="data.name" class="form-control" id="name" placeholder="Sensor name">
+    <input type="number" ng-model="data.type" class="form-control" id="type" placeholder="Sensor type">
+  </div>
+
+
+  <div class="checkbox">
+    <label>
+      <input ng-model="data.activated" type="checkbox"> Is sensor activeted?
+    </label>
+  </div>
+  <button ng-click="addSubmit(data)" class="btn btn-default">Add!</button>
+</form>
