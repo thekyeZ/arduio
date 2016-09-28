@@ -35,7 +35,7 @@ var arduio = angular.module("arduio", ['backand', 'ui.router', 'ngResource'])
       })
       .state('value',{
         url: '/value/:id',
-        templateUrl: '/js/sensors/velue.html',
+        templateUrl: '/js/sensors/value.html',
         controller: 'singleValueController'
       })
 

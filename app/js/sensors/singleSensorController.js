@@ -1,4 +1,4 @@
-arduio.controller("singleSensorController",  function($scope, dataService, $stateParams){
+arduio.controller("singleSensorController",  function($scope, dataService , randomDataGenerator, $stateParams, $interval){
 
   $scope.pageTitle = "Single Sensor";
   var sensorId = $stateParams.id
@@ -8,10 +8,17 @@ arduio.controller("singleSensorController",  function($scope, dataService, $stat
   //     console.log(sensors);
   // });
 
-  dataService.getValuesBySensor(sensorId).success(function(values){
-    $scope.values = values;
-  });
 
 
+  $interval(function() {
+    dataService.getValuesBySensor(sensorId).success(function(values){
+      $scope.values = values;
+    });
+  }, 1100);
+
+
+  $interval(function() {
+      randomDataGenerator.saveData();
+  }, 1000);
 
 });

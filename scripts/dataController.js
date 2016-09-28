@@ -6,8 +6,17 @@ module.exports.getall = function(req, res){
   res.send(post);
 }
 
-module.exports.save = function(res, res) {
+module.exports.save = function(req, res) {
   var post = req.body;
   fs.writeFileSync('data/testSave/' + id + '.json', JSON.stringify(post));
   res.send(post);
-}
+};
+
+module.exports.generateData = function(req, res){
+
+  setInterval(function(){
+    
+  } ,1000);
+
+
+};
