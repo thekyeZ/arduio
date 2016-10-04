@@ -17,8 +17,8 @@ arduio.controller("singleSensorController",  function($scope, dataService , rand
   }, 1100);
 
 
-  $interval(function() {
-      randomDataGenerator.saveData();
-  }, 1000);
+  //$interval(function() {
+  //    randomDataGenerator.saveData();
+  //}, 1000);
 
 });

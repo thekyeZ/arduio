@@ -5,11 +5,21 @@ var app = express();
 var rootPath = path.normalize(__dirname + "/../");
 var bodyParser = require("body-parser");
 
+
 //-----------------------
 var http = require('http');
 var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
 var portName = "/dev/cu.usbmodem1411";
+
+
+
+
+function posttemp (req, res) {
+    var post = {type: 1};
+    res.setHeader('Content-Type', 'application/json');
+    res.send(post);
+};
 
 var myPort = new SerialPort(portName, {
     baudRate:9600,
@@ -26,7 +36,7 @@ function onOpen(){
 }
 
 function onData(data){
-    console.log('on data'+data);
+    console.log(data);
     //data.push(data);
 }
 function onRequest(request, response){
@@ -44,14 +54,20 @@ function onRequest(request, response){
 
 
 
+
+
+//-----------------
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(express.static(rootPath + "/app"));
 app.get('/posts/getall', posts.getall);
 app.post('/post/save', posts.save);
+app.get('/sensors', posttemp);
 
 
 
 app.listen(8000);
 console.log("Running on 8000");
+
