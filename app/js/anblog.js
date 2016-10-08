@@ -1,9 +1,21 @@
-var arduio = angular.module("arduio", ['backand', 'ui.router', 'ngResource'])
-  .config(function($stateProvider, $urlRouterProvider, BackandProvider){
+var arduio = angular.module("arduio", ["firebase", 'backand', 'ui.router', 'ngResource', 'ui-notification'])
+  .config(function($stateProvider, $urlRouterProvider, BackandProvider, NotificationProvider){
+
+      //NotificationProvider.setOptions({
+      //    delay: 10000,
+      //    startTop: 20,
+      //    startRight: 10,
+      //    verticalSpacing: 20,
+      //    horizontalSpacing: 20,
+      //    positionX: 'left',
+      //    positionY: 'bottom'
+      //});
+      //
 
     BackandProvider.setAppName('arduio');
     BackandProvider.setSignUpToken('f1fad0c9-4302-427a-988d-68d2877b42ca');
     BackandProvider.setAnonymousToken('501575af-13ef-4636-beb1-9c4be3038736');
+
 
     $urlRouterProvider.otherwise('/sensors');
 
@@ -41,4 +53,5 @@ var arduio = angular.module("arduio", ['backand', 'ui.router', 'ngResource'])
 
 
   })
+
 ;

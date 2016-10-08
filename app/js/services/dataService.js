@@ -40,17 +40,14 @@ arduio.factory("dataService", function($http, $resource, Backand){
     },
     deleteSensor: function(sensor){
       return $http ({
-        method: 'POST',
-        url: Backand.getApiUrl() + '/1/objects/sensors',
-        data: {
-          "name": data.name,
-          "type": parseInt(data.type),
-          "active": + data.activated,
-          "last_update": new Date()
+        method: 'DELETE',
+        url: Backand.getApiUrl() + '/1/objects/sensors/'+sensor.id,
+        headers: {
+          "Cache-Control": "no-cache=\"set-cookie\"",
+          "Content-Type": "application/json; charset=utf-8"
         }
       });
     }
-
 
   };
 });
