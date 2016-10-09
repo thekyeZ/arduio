@@ -1,5 +1,5 @@
-var arduio = angular.module("arduio", ["firebase", 'backand', 'ui.router', 'ngResource', 'ui-notification'])
-  .config(function($stateProvider, $urlRouterProvider, BackandProvider, NotificationProvider){
+var arduio = angular.module("arduio", ["firebase", 'backand', 'ui.router', 'ngResource', 'ui-notification', 'chart.js'])
+  .config(function($stateProvider, $urlRouterProvider, BackandProvider, ChartJsProvider){
 
       //NotificationProvider.setOptions({
       //    delay: 10000,
@@ -11,6 +11,14 @@ var arduio = angular.module("arduio", ["firebase", 'backand', 'ui.router', 'ngRe
       //    positionY: 'bottom'
       //});
       //
+      ChartJsProvider.setOptions({
+          chartColors: ['#Fa4252', '#ee8A80'],
+          responsive: false
+      });
+      // Configure all line charts
+      ChartJsProvider.setOptions('line', {
+          showLines: true
+      });
 
     BackandProvider.setAppName('arduio');
     BackandProvider.setSignUpToken('f1fad0c9-4302-427a-988d-68d2877b42ca');
@@ -47,8 +55,8 @@ var arduio = angular.module("arduio", ["firebase", 'backand', 'ui.router', 'ngRe
       })
       .state('value',{
         url: '/value/:id',
-        templateUrl: '/js/sensors/value.html',
-        controller: 'singleValueController'
+        templateUrl: '/js/values/value.html',
+        controller: 'valuesController'
       })
 
 

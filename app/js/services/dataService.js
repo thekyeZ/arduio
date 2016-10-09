@@ -47,6 +47,17 @@ arduio.factory("dataService", function($http, $resource, Backand){
           "Content-Type": "application/json; charset=utf-8"
         }
       });
+    },
+    getValueById: function(id){
+      return $http ({
+        method: 'GET',
+        url: Backand.getApiUrl() + '/1/query/data/get_value_by_id',
+        params: {
+          parameters: {
+            id: id
+          }
+        }
+      });
     }
 
   };

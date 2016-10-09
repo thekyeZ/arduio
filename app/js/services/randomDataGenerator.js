@@ -3,19 +3,21 @@ arduio.factory("randomDataGenerator", function($http){
     saveData: function(){
       return $http({
           method: 'POST',
-          url: "htttps://api.backand.com:443/1/objects/values",
+          url: "https://api.backand.com:443/1/objects/values",
           data:
           {
           	"type": 1,
           	"value": (Math.random() * (10.12 - 85.22) + 85.22).toFixed(2),
-          	"sensor": 1,
-          	"timestamp": Date.now,
+          	"sensor": 47,
+          	"timestamp": Date.now(),
           	"place": 1
 
         }
       });
+    },
+    generateDate: function(start, end){
+            return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     }
-
 
   }
 

@@ -3,15 +3,18 @@ arduio.controller("sensorsController",  function($scope, dataService, Notificati
   $scope.pageTitle = "Sensors";
 
   //get list of all avaible sensors
-  dataService.getSensors().success(function(sensors){
-      $scope.sensors = sensors;
-      console.log(sensors);
-  });
+    function getSensors(){
+        dataService.getSensors().success(function(sensors){
+            $scope.sensors = sensors;
+        });
+    }
+
+   getSensors();
 
   $scope.deleteSensor = function(sensor){
-    dataService.deleteSensor(sensor).success(function(data){
-        Notification.success('Success notification');
-        dataService.getSensors();
+    dataService.deleteSensor(sensor).success(function(){
+        getSensors();
+        Notification.primary('Sensor deleted!');
     });
   };
 

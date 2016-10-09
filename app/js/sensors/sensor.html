@@ -1,5 +1,7 @@
 Single sensor
 
+<canvas height="200" width="{{width_chart}}" class="chart chart-line" chart-data="data" chart-labels="labels"
+        chart-series="series" chart-click="onClick"></canvas>
 
 
 <table class="table table-striped">
@@ -14,7 +16,7 @@ Single sensor
     <td>{{value.id}}</td>
     <td>{{value.sensor}}</td>
     <td>{{value.value}}</td>
-    <td>{{value.timestamp}}</td>
+    <td>{{value.timestamp | date : format : timezone}}</td>
   </tr>
 
 </table>
